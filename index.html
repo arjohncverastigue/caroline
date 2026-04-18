@@ -127,15 +127,15 @@
 
         .heart-container {
             position: relative;
-            width: 340px;
-            height: 340px;
+            width: 450px;
+            height: 450px;
             margin: 0 auto 40px;
         }
 
         .photo-placeholder {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 65px;
+            height: 65px;
             background: var(--light-green);
             border-radius: 12px;
             display: flex;
@@ -435,28 +435,33 @@
 
         // Photo paths - easily replaceable:
         // <!-- REPLACE IMG SRC WITH YOUR PHOTO PATH: -->
-        const photos = [
-            'Carol-picture/Messenger_creation_C1EC6E70-968C-404B-996B-BDDCE2721F75.jpeg',
-            'Carol-picture/Messenger_creation_123BA1C8-7676-4993-8D64-97275759652C.jpeg',
-            'Carol-picture/Messenger_creation_EAAEEB5B-B12B-4B6D-89B6-EA695286EF87.jpeg',
-            'Carol-picture/Messenger_creation_19998A07-51D7-41D8-B9DC-5BAF8C205522.png',
-            'Carol-picture/Messenger_creation_9FD3C2FA-9BFB-44BF-AA05-44ED7DE58B51.png',
-            'Carol-picture/Messenger_creation_F7CCD104-582C-4CB0-B0F8-87CFA622F586.jpeg',
-            'Carol-picture/Messenger_creation_DBAC5573-8D46-434B-BB44-2B4A8690BF9B.jpeg',
-            'Carol-picture/Messenger_creation_8B342C1C-0C02-4AD3-8E5D-7580556E5EB3.jpeg',
-            'Carol-picture/Messenger_creation_42FB1A93-A1B0-4660-BF87-73E9B8C66859.jpeg',
+const photos = [
+            'Carol-picture/3e71f09f-c1f9-4f65-9faa-bf348b0ff434.jpg',
             'Carol-picture/Messenger_creation_010C8C30-13F1-492D-924C-929C7AC2733C.jpeg',
-            'Carol-picture/Messenger_creation_9B53A546-300E-4E95-A720-AE4F32016C23.jpeg',
+            'Carol-picture/Messenger_creation_123BA1C8-7676-4993-8D64-97275759652C.jpeg',
+            'Carol-picture/Messenger_creation_19998A07-51D7-41D8-B9DC-5BAF8C205522.png',
             'Carol-picture/Messenger_creation_1CAA8175-789C-4433-83E8-4BD414D6D6E1.jpeg',
-            'Carol-picture/Messenger_creation_8B9AFB84-CA5E-4B53-BE90-49133B51C64D.jpeg',
-            'Carol-picture/Messenger_creation_683C6A88-01D3-43F7-9DC1-339BFA7D0411.jpeg',
-            'Carol-picture/Messenger_creation_64C41E9B-EA4B-46B7-AE42-CFDE7950B2A1.jpeg',
-            'Carol-picture/Messenger_creation_68966E55-074E-4F17-AF72-1A5DD5ADADD1.jpeg',
-            'Carol-picture/Messenger_creation_8EA30186-0260-453A-9B4C-BD9110FFCE76.png',
-            'Carol-picture/Messenger_creation_A05CDEEF-8C69-430D-B9FA-6DA0AB812ED0.jpeg',
             'Carol-picture/Messenger_creation_30D6FA88-98C5-4FD9-A407-F812E8C7398C.png',
+            'Carol-picture/Messenger_creation_3EFA6635-EAF0-474E-861D-5631E2F0D6E9.jpeg',
+            'Carol-picture/Messenger_creation_42FB1A93-A1B0-4660-BF87-73E9B8C66859.jpeg',
+            'Carol-picture/Messenger_creation_64C41E9B-EA4B-46B7-AE42-CFDE7950B2A1.jpeg',
+            'Carol-picture/Messenger_creation_683C6A88-01D3-43F7-9DC1-339BFA7D0411.jpeg',
+            'Carol-picture/Messenger_creation_68966E55-074E-4F17-AF72-1A5DD5ADADD1.jpeg',
+            'Carol-picture/Messenger_creation_86DB8450-377D-4708-953B-DB2DF7B7B291.jpeg',
+            'Carol-picture/Messenger_creation_897285D6-CFB0-4C70-A942-52BC6D968910.jpeg',
+            'Carol-picture/Messenger_creation_8B342C1C-0C02-4AD3-8E5D-7580556E5EB3.jpeg',
+            'Carol-picture/Messenger_creation_8B9AFB84-CA5E-4B53-BE90-49133B51C64D.jpeg',
+            'Carol-picture/Messenger_creation_8EA30186-0260-453A-9B4C-BD9110FFCE76.png',
+            'Carol-picture/Messenger_creation_9B53A546-300E-4E95-A720-AE4F32016C23.jpeg',
+            'Carol-picture/Messenger_creation_9FD3C2FA-B9FB-44BF-AA05-44ED7DE58B51.png',
+            'Carol-picture/Messenger_creation_A0236823-3C0E-4E7D-B8DB-AB232196A0F0.png',
+            'Carol-picture/Messenger_creation_A05CDEEF-8C69-430D-B9FA-6DA0AB812ED0.jpeg',
             'Carol-picture/Messenger_creation_A2797758-01D7-4C65-A758-C487DC252046.jpeg',
-            'Carol-picture/3e71f09f-c1f9-4f65-9faa-bf348b0ff434.jpg'
+            'Carol-picture/Messenger_creation_C1EC6E70-968C-404B-996B-BDDCE2721F75.jpeg',
+            'Carol-picture/Messenger_creation_DBAC5573-8D46-434B-BB44-2B4A8690BF9B.jpeg',
+            'Carol-picture/Messenger_creation_EAAEEB5B-B12B-4B6D-89B6-EA695286EF87.jpeg',
+            'Carol-picture/Messenger_creation_F2283023-E210-49D7-9673-9799B2FB49DA.jpeg',
+            'Carol-picture/Messenger_creation_F7CCD104-582C-4CB0-B0F8-87CFA622F586.jpeg'
         ];
 
         let currentPhotoIndex = 0;
@@ -500,9 +505,9 @@
         });
 
         // Heart shape parametric equation parameters
-        const scale = 14;
-        const centerX = 170;
-        const centerY = 170;
+        const scale = Math.max(11, 230 / photos.length);
+        const centerX = 225;
+        const centerY = 225;
 
         function getHeartPosition(index, total) {
             const t = (index / total) * 2 * Math.PI;
